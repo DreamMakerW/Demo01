@@ -17,6 +17,7 @@
 APlayerCharacter::APlayerCharacter()
 {
 	CharacterCombatComponent = CreateDefaultSubobject<UCharacterCombatComponent>(TEXT("PlayerCombatComponent"));
+	// CurrentState = EState::Unarmed;
 }
 
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

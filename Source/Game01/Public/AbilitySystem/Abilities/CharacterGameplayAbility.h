@@ -27,10 +27,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Character|Ability")
 	UCharacterCombatComponent* GetCharacterCombatComponentFromActorInfo();
 
-
+	UFUNCTION(BlueprintPure, Category = "Character|Ability")
+	USkeletalMeshComponent* GetSkeletalMeshComponentFromActorInfo();
 	
 private:
 	TWeakObjectPtr<APlayerCharacter> CachedPlayerCharacter;
 	TWeakObjectPtr<APlayerController> CachedPlayerController;
-	
+	TWeakObjectPtr<USkeletalMeshComponent> CachedSkeletalMeshComponent;
 };

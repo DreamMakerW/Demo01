@@ -26,3 +26,9 @@ UCharacterCombatComponent* UCharacterGameplayAbility::GetCharacterCombatComponen
 {
 	return GetPlayerCharacterFromActorInfo()->GetCharacterCombatComponent();
 }
+
+USkeletalMeshComponent* UCharacterGameplayAbility::GetSkeletalMeshComponentFromActorInfo()
+{
+	return GetPlayerCharacterFromActorInfo()->GetMesh();
+}
+

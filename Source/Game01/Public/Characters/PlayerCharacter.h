@@ -5,8 +5,10 @@
 #include "CoreMinimal.h"
 #include "Characters/BaseCharacter.h"
 #include "GameplayTagContainer.h"
+#include "CharacterTypes/CharacterEnumTypes.h"
 
 #include "PlayerCharacter.generated.h"
+
 
 class UInputAction;
 class UInputMappingContext;
@@ -30,6 +32,9 @@ public:
 	//~ Begin APawn Interface.
 	virtual void PossessedBy(AController* NewController) override;
 	//~ End APawn Interface
+
+	UPROPERTY(BlueprintReadWrite, Category = "State", Meta = (AllowPrivateAccess = "true"))
+	EState CurrentState;
 
 protected:
 
