@@ -7,6 +7,7 @@
 #include "BaseGameplayAbility.generated.h"
 
 class UPawnCombatComponent;
+class UCharacterAbilitySystemComponent;
 
 UENUM(BlueprintType)
 enum class ECharacterAbilityActivationPolicy : uint8

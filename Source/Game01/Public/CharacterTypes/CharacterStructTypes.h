@@ -32,6 +32,9 @@ struct FCharacterWeaponData
 		UInputMappingContext* WeaponMappingContext;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-		TArray<FCharacterAbilitySet> DefaultWeaponAbility;
+		TArray<FCharacterAbilitySet> DefaultAbility;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+		TArray<FCharacterAbilitySet> WeaponAbility;
 
 };
