@@ -62,7 +62,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	MyInputComponent->BindNativeInputAction(InputConfigDataAsset, CharacterGameplayTags::Input_LookUp, ETriggerEvent::Triggered, this, &ThisClass::LookUp);
 	MyInputComponent->BindNativeInputAction(InputConfigDataAsset, CharacterGameplayTags::Input_LookRight, ETriggerEvent::Triggered, this, &ThisClass::LookRight);
 
-	MyInputComponent->BindAbilityInputAction(InputConfigDataAsset, ETriggerEvent::Started, this, &ThisClass::Input_AbilityInputPressed, &ThisClass::Input_AbilityInputReleased);
+	MyInputComponent->BindAbilityInputAction(InputConfigDataAsset, this, &ThisClass::Input_AbilityInputPressed, &ThisClass::Input_AbilityInputReleased);
 	
 #pragma region Enhanced Input Component
 	// 增强输入组件

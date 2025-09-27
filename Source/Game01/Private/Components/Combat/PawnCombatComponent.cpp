@@ -2,6 +2,8 @@
 
 
 #include "Components/Combat/PawnCombatComponent.h"
+
+#include "DebugHelper.h"
 #include "Items/Weapons/WeaponBase.h"
 
 

@@ -21,6 +21,11 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 		UInputAction* InputAction;
+
+	bool IsValid() const
+	{
+		return InputTag.IsValid() && InputAction;
+	}
 };
 
 /**

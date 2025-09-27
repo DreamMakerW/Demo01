@@ -4,3 +4,7 @@
 #include "Items/Weapons/CharacterWeapon.h"
 #include "DebugHelper.h"
 
+void ACharacterWeapon::AssignGrantedAbilitySpecHandle(const TArray<FGameplayAbilitySpecHandle>& InSpecHandles)
+{
+	GrantedAbilitySpecHandles = InSpecHandles;
+}

@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Items/Weapons/WeaponBase.h"
+#include "GameplayAbilitySpecHandle.h"
+#include "CharacterTypes/CharacterStructTypes.h"
+
 #include "CharacterWeapon.generated.h"
 
 /**
@@ -24,6 +27,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "WeaponDta")
 	FCharacterWeaponData CharacterWeaponData;
 
+	UFUNCTION(BlueprintCallable)
+	void AssignGrantedAbilitySpecHandle(const TArray<FGameplayAbilitySpecHandle>& InSpecHandles);
 
+private:
+	TArray<FGameplayAbilitySpecHandle> GrantedAbilitySpecHandles;
 
 };

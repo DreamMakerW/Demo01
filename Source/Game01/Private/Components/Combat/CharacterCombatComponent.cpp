@@ -3,6 +3,8 @@
 
 #include "Components/Combat/CharacterCombatComponent.h"
 
+#include "Items/Weapons/CharacterWeapon.h"
+
 ACharacterWeapon* UCharacterCombatComponent::GetCharacterWeaponByTag(FGameplayTag InWeaponTag) const
 {
     return Cast<ACharacterWeapon>(GetCarriedWeaponByTag(InWeaponTag));

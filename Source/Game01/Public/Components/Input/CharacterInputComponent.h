@@ -21,7 +21,7 @@ public:
 	void BindNativeInputAction(const UDataAsset_InputConfig* InInputConfig, const FGameplayTag& InInputTag, ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func);
 
 	template<class UserObject, typename CallbackFunc>
-	void BindAbilityInputAction(const UDataAsset_InputConfig* InInputConfig, ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc PressedFunc, CallbackFunc ReleasedFunc);
+	void BindAbilityInputAction(const UDataAsset_InputConfig* InInputConfig, UserObject* ContextObject, CallbackFunc PressedFunc, CallbackFunc ReleasedFunc);
 };
 
 template<class UserObject, typename CallbackFunc>
@@ -35,7 +35,7 @@ inline void UCharacterInputComponent::BindNativeInputAction(const UDataAsset_Inp
 }
 
 template<class UserObject, typename CallbackFunc>
-inline void UCharacterInputComponent::BindAbilityInputAction(const UDataAsset_InputConfig* InInputConfig, ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc PressedFunc, CallbackFunc ReleasedFunc)
+inline void UCharacterInputComponent::BindAbilityInputAction(const UDataAsset_InputConfig* InInputConfig, UserObject* ContextObject, CallbackFunc PressedFunc, CallbackFunc ReleasedFunc)
 {
 	
 	checkf(InInputConfig, TEXT("CharacterInputComponent.cpp: Forgot to load DataAsset_InputConfig!"));
@@ -44,8 +44,9 @@ inline void UCharacterInputComponent::BindAbilityInputAction(const UDataAsset_In
 
 	for (FInputActionConfig& ActionConfig : AbilityActionConfigArray)
 	{
-		BindAction(ActionConfig.InputAction, TriggerEvent, ContextObject, PressedFunc, ActionConfig.InputTag);
-		BindAction(ActionConfig.InputAction, TriggerEvent, ContextObject, ReleasedFunc, ActionConfig.InputTag);
+		if (!ActionConfig.IsValid()) continue;
+		BindAction(ActionConfig.InputAction, ETriggerEvent::Started, ContextObject, PressedFunc, ActionConfig.InputTag);
+		BindAction(ActionConfig.InputAction, ETriggerEvent::Completed, ContextObject, ReleasedFunc, ActionConfig.InputTag);
 	}
 
 }

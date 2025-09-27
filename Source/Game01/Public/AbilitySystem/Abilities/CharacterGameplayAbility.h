@@ -24,7 +24,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Character|Ability")
 	APlayerController* GetPlayerControllerFromAcotrInfo();
 
-	UFUNCTION(BlueprintCallable, Category = "Character|Ability")
+	UFUNCTION(BlueprintPure, Category = "Character|Ability")
 	UCharacterCombatComponent* GetCharacterCombatComponentFromActorInfo();
 
 	UFUNCTION(BlueprintPure, Category = "Character|Ability")

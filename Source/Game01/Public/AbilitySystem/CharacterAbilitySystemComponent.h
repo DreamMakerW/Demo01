@@ -23,6 +23,6 @@ public:
 	void OnAbilityInputReleased(const FGameplayTag& InInputTag);
 
 	UFUNCTION(BlueprintCallable, Category = "CharacterASC|Ability", meta = (ApplyLevel = "1"))
-	void GrantCharacterWeaponAbility(const TArray<FCharacterAbilitySet>& InDefaultWeaponAbilities, int32 ApplyLevel);
+	void GrantCharacterWeaponAbility(const TArray<FCharacterAbilitySet>& InDefaultWeaponAbilities, int32 ApplyLevel, TArray<FGameplayAbilitySpecHandle>& OutGrantedAbilitySpecHandle);
 	
 };
